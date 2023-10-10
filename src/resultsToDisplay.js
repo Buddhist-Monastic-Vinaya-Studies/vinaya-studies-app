@@ -19,7 +19,7 @@ export const result = {
   },
   metaTags: {
     subject: ['feces','plants'],
-    tags: ['bhikkhunī','pācittiya', 'Sarvāstivāda', 'Chinese', 'Disposing Feces on Plants']
+    tags: ['Chinese', 'Sarvāstivāda', 'bhikkhunī','pācittiya', 'Disposing Feces on Plants']
   },
   },
   fullParallels: [
@@ -77,26 +77,26 @@ export const result = {
       text: 'Yā pana bhikkhunī uccāraṁ vā passāvaṁ vā saṅkāraṁ vā vighāsaṁ vā harite chaḍḍeyya vā chaḍḍāpeyya vā, pācittiyaṁ.',
       label: 'Paḷī Text Bhikkhunī Pācittiya 9',
       summary: 'A nun who disposes of feces, urine, or rubbish on cultivated plants must confess the offense.',
-		translations: [
+      translations: [
       {
         id: 'pli-tv-bi-pc9_en_thanissaro',
         translator: 'Thanissaro Bhikkhu',
         inLanguage: 'en',
         text: 'Should any bhikkhuni toss or get someone else to toss excrement or urine or trash or leftovers on living crops, it is to be confessed.'	
-		},
-		{
-			id: 'pli-tv-bi-pc9_de_huesken-nanadassana',
-      translator: ['Ute Husken','Bhikkhu Nanadassana'],
-      inLanguage: 'de',
-      text: 'Welche Nonne aber Fäkalien, Urin, Abfall oder Essensreste auf ein Feld wirft, muß dafür sühnen.'
-		},
-		{
-			id: 'pli-tv-bi-pc9_id_karniawan',
-      translator: 'Arya Karniawan',
-      inLanguage: 'in',
-      text: 'Jika ada Bhikkhuni yang melempar atau membuat orang lain melempar tinja atau air kencing atau sampah atau sisa-sisa pada tanaman hidup, itu harus di akui.'
-		}
-		]
+      },
+      {
+        id: 'pli-tv-bi-pc9_de_huesken-nanadassana',
+        translator: ['Ute Husken','Bhikkhu Nanadassana'],
+        inLanguage: 'de',
+        text: 'Welche Nonne aber Fäkalien, Urin, Abfall oder Essensreste auf ein Feld wirft, muß dafür sühnen.'
+      },
+      {
+        id: 'pli-tv-bi-pc9_id_karniawan',
+        translator: 'Arya Karniawan',
+        inLanguage: 'in',
+        text: 'Jika ada Bhikkhuni yang melempar atau membuat orang lain melempar tinja atau air kencing atau sampah atau sisa-sisa pada tanaman hidup, itu harus di akui.'
+      }
+      ]
     },
     {
       id: 'lzh-dg-bi-pm-pc77',

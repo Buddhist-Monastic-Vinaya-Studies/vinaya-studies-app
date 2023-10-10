@@ -8,6 +8,7 @@ const RuleRepresentation = ({ruleRep}) => {
 return ( 
  <div>
   {ruleRep}
+  <hr/>
  </div>
  );
 };

@@ -4,8 +4,6 @@
 //parameter: baseRule object with metadata key-value pairs
 //returns: <p>s with each metadata within article tags
 
-import './App.css';
-
 const RuleMetaData = ({name, inLanguage, trad, srcTxt, ofClass, rulNum, summary}) => {
  //attribute, eventHandler
  

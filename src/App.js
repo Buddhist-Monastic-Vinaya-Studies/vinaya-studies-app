@@ -1,21 +1,20 @@
 import './App.css';
 
 //components
-import RuleMetaData from './RuleMetaData';
-import RuleMetaDataAccordian from './RuleMetaDataAccordian';
-import RuleRepresentation from './RuleRepresentation';
+import RuleCard from './RuleCard';
+import SegmentMetaData from './SegmentMetaData';
+import RuleList from './RuleList'
 
 //data
 import { result } from './resultsToDisplay';
 
 const baseRuleHeader = result.base.baseRuleHeader;
 const baseRule = result.base.baseRule;
-//const metaTags = result.metaTags;
-//const fullParallels = result.fullParallels;
-//const partialParallels = result.partialParallels;
+const metaTags = result.base.metaTags;
+const fullParallels = result.fullParallels;
+const partialParallels = result.partialParallels;
 
 function App() {
-  console.log(baseRule);
   return (
     <div className="App">
       <header className="App-header">
@@ -23,10 +22,10 @@ function App() {
         <h3>{baseRuleHeader.label}</h3>
       </header>
       <section className="App-body">
-        <RuleMetaData key={baseRule.id} {...baseRule} />
-        <RuleMetaDataAccordian key={baseRule.id} rule={baseRule} />
-
-        <RuleRepresentation ruleRep={baseRule.text} />
+        <RuleCard key={baseRule.id} rule={baseRule} />
+        <SegmentMetaData metaTags={metaTags} />
+        <RuleList listName="Full Parallels" rules={fullParallels} />
+        <RuleList listName="Partial Parallels" rules={partialParallels} />
       </section>
     </div>
   );
