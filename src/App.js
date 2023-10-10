@@ -3,7 +3,7 @@ import './App.css';
 //components
 import RuleCard from './RuleCard';
 import SegmentMetaData from './SegmentMetaData';
-import RuleList from './RuleList'
+import RuleList from './RuleList';
 
 //data
 import { result } from './resultsToDisplay';
