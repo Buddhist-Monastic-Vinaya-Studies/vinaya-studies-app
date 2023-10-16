@@ -1,12 +1,17 @@
 import React from "react";
 import availableText from './filterAndSearch/availableTexts.json';
 
-function constructRuleId(lang,trad,ord,vinTxt,ofCls,num) {
+function constructRuleId(lang = "?",trad = "?",ord = "?",vinTxt = "?",ofCls = "?",num = "?") {
 
+  let ruleId = lang + "-" + trad + "-" + ord + "-" + vinTxt + "-" + ofCls + num;
+  console.log(ruleId);
 };
+
+function scopeRadioInputsToNewContext() {};
 
 function handleRadioChange(name, value) {
   console.log(name + ": " + value);
+ // constructRuleId(lang = language,trad = tradition,ord = order,vinTxt = vinSection,ofCls = ofClass,num = rulNum);
 }
 
 

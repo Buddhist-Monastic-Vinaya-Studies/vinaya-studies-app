@@ -10,11 +10,11 @@ import SegmentMetaData from './SegmentMetaData';
 import RuleList from './RuleList';
 
 function Results({result}) {
- const baseRuleHeader = result.base.baseRuleHeader;
- const baseRule = result.base.baseRule;
- const metaTags = result.base.metaTags;
- const fullParallels = result.fullParallels;
- const partialParallels = result.partialParallels;
+  const baseRuleHeader = result.base.baseRuleHeader;
+  const baseRule = result.base.baseRule;
+  const metaTags = result.base.metaTags;
+  const fullParallels = result.fullParallels;
+  const partialParallels = result.partialParallels;
   return (
     <div className="App">
       <header className="App-header">

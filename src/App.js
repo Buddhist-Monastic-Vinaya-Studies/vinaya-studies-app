@@ -11,7 +11,7 @@ import { result } from './resultsToDisplay';
 function App() {
   return (
     <SearchForm />
-  //  <Results result={result} />
+   // <Results result={result} />
   );
 }
 
