@@ -1,28 +1,19 @@
 import React from "react";
-import availableText from './filterAndSearch/availableTexts.json';
+import availableText from './availableTexts.json';
 
-function constructRuleId(lang = "?",trad = "?",ord = "?",vinTxt = "?",ofCls = "?",num = "?") {
+// components
+import InputRuleIdTextBox from "./InputRuleIdTextBox";
 
-  let ruleId = lang + "-" + trad + "-" + ord + "-" + vinTxt + "-" + ofCls + num;
-  console.log(ruleId);
-};
 
-function scopeRadioInputsToNewContext() {};
 
-function handleRadioChange(name, value) {
-  console.log(name + ": " + value);
- // constructRuleId(lang = language,trad = tradition,ord = order,vinTxt = vinSection,ofCls = ofClass,num = rulNum);
+function setLanguage() {
+
 }
 
 
-const RadioInput = ({name, label, value, checked, disabled, setter}) => {
-	return (
-    <label>
-      <input type="radio" name={name} checked={checked === value} disabled={disabled} onChange={() => { setter(value); handleRadioChange(name, value)}} />
-      <span>{label}</span>
-    </label>
-	);
-};
+
+
+
 
 const RuleNumInput = ({id, value, name, min, max, setter}) => {
   return (
@@ -33,27 +24,38 @@ const RuleNumInput = ({id, value, name, min, max, setter}) => {
   )
 };
 
-const RuleIdInput = ({id, value, name, setter}) => {
-  return (
-    <div class="textInput">
-      <label htmlFor={id}>Rule Number</label>
-      <input id={id} name={name} value={value} onChange={() => setter(value)}/>
-    </div>
-  )
-};
+
 
 function setRuleNum(e) {};
 
+
+// Display and manage Search Form 
 const SearchForm = props => {
+  //state values and control
   const [ruleId, setRuleId] = React.useState();
   const [language, setLanguage] = React.useState();
-	const [tradition, setTradition] = React.useState();
+	 const [tradition, setTradition] = React.useState();
   const [order, setOrder] = React.useState();
-  const [vinSection, setVinSection] = React.useState();
-  const [ofClass, setOfClass] = React.useState();
-  const [rulNum, setRulNum] = React.useState();
+  const [vinayaSection, setVinayaSection] = React.useState();
+  const [offenseClass, setOffenseClass] = React.useState();
+  const [ruleNumber, setRuleNumber] = React.useState();
   const [min, setMin] = React.useState();
   const [max, setMax] = React.useState();
+
+  const RadioInput = ({name, label, value, checked, disabled, setter}) => {
+    return (
+      <label>
+        <input type="radio" name={name} checked={checked === value} disabled={disabled} onChange={() => { setter(value); handleRadioChange(name, value)}} />
+        <span>{label}</span>
+      </label>
+    );
+  };
+
+ function handleRadioChange(name, value) {
+  console.log(name + ": " + value);
+ // constructRuleId(lang = language,trad = tradition,ord = order,vinTxt = vinSection,ofCls = ofClass,num = rulNum);
+ };
+
 	const handleSubmit = e => {
 		e.preventDefault();
 		const data = {language, tradition, order, vinSection, ofClass, rulNum};
@@ -65,7 +67,7 @@ const SearchForm = props => {
   return (
     <form onSubmit={handleSubmit}>
       <p>Enter the Rule Id directly in format like "Lzh-Dg-Bi-Pm-Pj8" or use radio buttons and num entry below.</p>
-      <RuleIdInput  id="ruleId" name="ruleId" value={ruleId} setter={setRuleId} />
+      <InputRuleIdTextBox />
       <p>or fill in sections below.</p>
       <div className="radio">
         <label>Language</label>
@@ -117,3 +119,59 @@ const SearchForm = props => {
 }
 
 export default SearchForm;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import { useState } from "react";
+// import { 
+//  Box, 
+//  FormControl, 
+//  FormLabel, 
+//  FormControlLabel, 
+//  RadioGroup, 
+//  Radio
+// } from "@mui/material";
+// import { selectors } from "./selectors"
+// import { CustomRadioGroup } from "./CustomRadioGroup";
+
+
+// export const SearchForm = () => {
+//  const [state, setState] = useState({
+//   language: "",
+//   tradition: "",
+//   order: "",
+//   vinayaSection: "",
+//   offenseClass: "",
+//   ruleNumber: ""
+//  });
+
+//  const handleChange = (event) => {
+//   setLangValue(event.target.value);
+//  }
+
+//  return (
+//   <Box>
+//    <FormControl>
+//     <FormLabel id = "language-selection-group-label">Language</FormLabel>
+//     <RadioGroup 
+//      name="language-selection-group" aria-labelledby="language-selection-group-label"
+//      value="langValue"
+//      onChange={handleChange}>
+//      <FormControlLabel control={<Radio size="small" color="primary"/>} label="Chinese" value="lzh"></FormControlLabel>
+//      <FormControlLabel control={<Radio size="small"/>} label="Paḷī" value="pli"></FormControlLabel>
+//     </RadioGroup>
+//    </FormControl>
+//   </Box>
+//  )
+// };

@@ -1,4 +1,4 @@
-[
+export const ruleRange = [
   { "ruleClass": "LzhDgBiPmPj", "num": 8},
   { "ruleClass": "LzhDgBiPmSs", "num": 0},
   { "ruleClass": "LzhDgBiPmNp", "num": 0},
