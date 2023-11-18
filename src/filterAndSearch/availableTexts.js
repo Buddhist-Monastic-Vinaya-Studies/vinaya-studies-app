@@ -1,10 +1,17 @@
 export const availableTexts = 
   [{
       "language": "Lzh",
-      "tradition": "Dh",
+      "tradition": "Dg",
       "order": "Bi",
       "vinayaSection": "Pm",
       "offenseClass": ["Pj", "Ss", "Np", "Pc", "Pd", "Sk", "As"]
+    }, 
+    {
+      "language": "Lzh",
+      "tradition": "Dg",
+      "order": "Bu",
+      "vinayaSection": "Pm",
+      "offenseClass": ["Pj", "Ss", "An", "Np", "Pc", "Pd", "Sk", "As"]
     },
     {
       "language": "Lzh",

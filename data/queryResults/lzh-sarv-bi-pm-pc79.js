@@ -1,5 +1,4 @@
-export 
-const result = {
+[{
   base: { 
   baseRuleHeader: {
     srcTxt: 'Taishō',
@@ -113,4 +112,4 @@ const result = {
       label: 'Dharmaguptaka Bhikkhunī Pācittiya 77'
     }
   ]
-};
+}]
