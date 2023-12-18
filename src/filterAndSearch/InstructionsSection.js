@@ -1,5 +1,3 @@
-import React from 'react'
-
 export default function InstructionsSection() {
  return (
   <div className="instructions">

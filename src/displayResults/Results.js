@@ -18,7 +18,7 @@ function Results({result}) {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>{baseRuleHeader.srcTxt}</h1>
+        <h1>{baseRuleHeader.sourceText}</h1>
         <h3>{baseRuleHeader.label}</h3>
       </header>
       <section className="App-body">
