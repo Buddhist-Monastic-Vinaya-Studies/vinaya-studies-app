@@ -1,0 +1,18 @@
+{
+  "name": "ann",
+  "age": "23",
+  "schools": [
+    {
+      "name": "Grace Elementary",
+      "years": "2006-2011"
+    },
+    {
+      "name": "Fulton Jr High",
+      "years": "2011-2014"
+    },
+    {
+      "name": "Shilder High",
+      "years": "2014-2018"
+    }
+  ]
+}

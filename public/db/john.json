@@ -1,0 +1,14 @@
+{
+  "name": "john",
+  "age": "53",
+  "schools": [
+    {
+      "name": "Snow Elementary",
+      "years": "1975-1981"
+    },
+    {
+      "name": "Snow Jr High",
+      "years": "1981-1984"
+    }
+  ]
+}

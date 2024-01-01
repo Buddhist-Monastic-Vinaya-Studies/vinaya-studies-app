@@ -1,59 +1,61 @@
 import './App.css';
-import React from 'react';
-//import fs from 'fs';
-import {
-  FormControl
-} from '@mui/material';
-import { result } from "./queryResults/lzh-dg-bi-pm-pc100.js";
+import React, {useState} from 'react';
+
+//import { useEffect, useState } from "react";
+//import axios from "axios";
+
 //components
+import {
+  Button, TextField, RadioGroup
+} from '@mui/material';
 import Results from './displayResults/Results';
-//import { findResultsToDisplayForRule } from './findResultsToDisplay/findResultsToDisplayForRule.js';
-
-
-
-
 
 
 
 function App() {
-  //const [ruleId, setRuleId] = useState('pli-tv-bu-pm-pj1')
- // const [result, setResult] = useState(displayResults(ruleId))
+  const [ruleId, setRuleId] = useState('');
+  const [result, setResult] = useState();
+  const [error, setError] = useState(null);
+  
+  const onClickHandler = async () => {
+    const filePath = '/db/queryResults/' + ruleId + '.json';
+    try {
+      const response = await fetch (filePath);
 
-  // last updated: 17/l2/2023 (dd/mm/yyyy) by: Ayya Niyyānika - initial creation
-  // parameter: ruleId  
-  // example: "lzh-dg-bu-pm-pj1"
-  // returns: result JSON object
-  // function displayResults() {
-  //   // fetch from existing query results if they exist
-  //   let found = getResultFromQueryResultsGivenRuleId(ruleId);
+      // Check if the response is successful
+        if (!response.ok) {
+          throw new Error(`Failed to fetch data: ${response.status} ${response.statusText}`);
+        }
 
-  //   if (!found) {
-  //     return "rule not found"
-  //   } else {
-  //     return found;
-  //   }
-  // };
-
-  // ***** getResultFromQueryResultsGivenRuleId(ruleId) *****
-  // last modified: 17-11-2023 (dd-mm-yyyy) by: Ayya Niyyānika - edit from script that accesses rootText
-  // parameter: the ruleId of one rule as arguements
-  // returns: the JSON array from the file that should contain the rule with the given ruleId 
-  // this script is expected to run from the main code area and access files in the ./queryResults directory
-  // function getResultFromQueryResultsGivenRuleId(ruleId) {
-  //   const fileName = "./queryResults/" + ruleId + ".js";
-
-  //   if (fs.existsSync(fileName)) {
-  //     return fs.readFileSync(fileName).toString();
-  //   } else {
-  //     return false;
-  //   }
-  // };
+    const data = await response.json();
+    setResult(data);
+    setError(null); // Clear any previous errors
+    } catch (error) {
+      console.error('Error fetching data:', error);
+      setResult(); // Clear the result
+      setError(`Error fetching data. Please check the file path and try again. ${filePath}`);
+    }
+    
+  };
 
   return ( 
-  <FormControl>
-    <Results result = {result}/> 
-  </FormControl>
+  <div style={{ padding: '20px' }}>
+   
+    <TextField id="ruleIdInput" label="Enter ruleID (e.g. pli-tv-bu-pm-pj1" variant="outlined" value={ruleId} onChange={(e) => setRuleId(e.target.value)}/>
+    <Button id="ruleIdSubmit" variant="contained" onClick={onClickHandler}>Find Parallels</Button>
+    <div style={{ marginTop: '20px' }}>
+        {error ? (
+          <p style={{ color: 'red' }}>{error}</p>
+        ) : (result != undefined) ? (
+          <Results result = {result}/>
+        ) : (
+        
+          <p>{result}</p>
+        )}
+      </div>
+     
+  </div>
   );
 }
 
-export default App;
+export default App
